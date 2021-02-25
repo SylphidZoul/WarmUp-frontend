@@ -4,7 +4,7 @@ import { Colors } from '../../styles/colors'
 export const Div = styled.div`
   width: 100%;
   max-width: 1024px;
-  padding: 0 24px;
+  padding: 0 24px 48px;
   margin: 0 auto;
 `
 

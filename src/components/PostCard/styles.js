@@ -12,6 +12,7 @@ export const Card = styled.div`
 
 export const TitleDiv = styled.div`
   width: 100%;
+  min-height: 62px;
   padding: 0 24px 24px;
   border-bottom: 1px solid ${Colors.mainGray};
 `
