@@ -2,9 +2,10 @@ class Http {
   static instance = new Http()
   server = 'https://jsonplaceholder.typicode.com/posts/'
 
-  get = async (query) => {
+  get = async (query = '') => {
     try {
       const response = await fetch(`${this.server}${query}`)
+
       const parsed = await response.json()
 
       return parsed
