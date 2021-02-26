@@ -7,7 +7,7 @@ export const PostCard = ({ postData, onDelete }) => {
   const history = useHistory()
 
   const handleEdit = () => {
-    history.push(`/posts/edit/${postData.id}`, postData)
+    history.push(`/posts/edit/${postData.id}`, { postData })
   }
 
   return (
