@@ -18,8 +18,8 @@ export const Layout = ({ title, children, isFetching = false, error = '' }) => {
 }
 
 Layout.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
   isFetching: PropTypes.bool,
   error: PropTypes.string
 }
