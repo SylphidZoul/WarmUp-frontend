@@ -3,9 +3,7 @@ import { Layout } from '../components/Layout'
 
 const NotFound = () => {
   return (
-    <Layout title='Not found'>
-      Not Found 404
-    </Layout>
+    <Layout title='Uuups! Page not found.' />
   )
 }
 
