@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { PostsContextProvider } from './context/PostsContext'
 import { Navbar } from './components/Navbar'
 import { Routes } from './routes'
 import GlobalStyle from './styles'
@@ -9,7 +10,9 @@ const App = () => {
     <BrowserRouter>
       <GlobalStyle />
       <Navbar />
-      <Routes />
+      <PostsContextProvider>
+        <Routes />
+      </PostsContextProvider>
     </BrowserRouter>
   )
 }
