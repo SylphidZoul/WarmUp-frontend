@@ -2,9 +2,6 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
-    index: path.resolve(__dirname, 'src/index.js')
-  },
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),

@@ -7,7 +7,7 @@ const EditPost = ({ location, match }) => {
   const { isFetching, error, updatePost } = useContext(PostsContext)
 
   const handleEdit = (changes) => {
-    const updates = { ...location.state.currentPost, changes }
+    const updates = { ...location.state.currentPost, ...changes }
     updatePost(match.params.id, updates)
   }
 
