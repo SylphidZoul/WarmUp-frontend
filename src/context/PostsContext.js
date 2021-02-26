@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { postsReducer, initialState, actions } from '../reducers/postsReducer'
 import Http from '../libs/http'
 
@@ -7,6 +8,7 @@ const { Provider } = PostsContext
 
 export const PostsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(postsReducer, initialState)
+  const history = useHistory()
 
   useEffect(() => {
     getPosts()
@@ -34,9 +36,10 @@ export const PostsContextProvider = ({ children }) => {
   const createPost = async (body) => {
     dispatch({ type: actions.FETCH_DATA })
     try {
-      const response = await Http.instance.post(body)
-      const payload = { posts: [...state.posts, response] }
+      const createdPost = await Http.instance.post(body)
+      const payload = { posts: [...state.posts, createdPost] }
       dispatch({ type: actions.UPDATE_POSTS, payload })
+      history.push(`/posts/${createdPost.id}`)
     } catch (error) {
       setConnectionError()
     }
@@ -54,6 +57,7 @@ export const PostsContextProvider = ({ children }) => {
 
       const payload = { posts: updatedPostList }
       dispatch({ type: actions.UPDATE_POSTS, payload })
+      history.push(`/posts/${updatedPost.id}`)
     } catch (error) {
       setConnectionError()
     }
