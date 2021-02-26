@@ -14,6 +14,7 @@ export const TitleDiv = styled.div`
   width: 100%;
   min-height: 62px;
   padding: 0 24px 24px;
+  margin-bottom: 24px;
   border-bottom: 1px solid ${Colors.mainGray};
 `
 
@@ -24,30 +25,5 @@ export const H3 = styled.h3`
   & a {
   color: ${Colors.mainWhite};
   text-decoration: none;
-  }
-`
-
-export const ButtonsDiv = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-top: 24px;
-`
-
-export const Button = styled.button`
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  color: ${Colors.mainWhite};
-  font-size: 14px;
-  font-weight: 500;
-  background-color: ${props => props.remove ? Colors.mainRed : Colors.mainBlue};
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${Colors.mainWhite};
-    color: ${Colors.mainBlack};
   }
 `

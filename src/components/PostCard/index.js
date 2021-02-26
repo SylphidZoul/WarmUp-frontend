@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { Card, TitleDiv, H3, ButtonsDiv, Button } from './styles'
+import { Card, TitleDiv, H3 } from './styles'
+import { PostButtons } from '../PostButtons/index'
 import PropTypes from 'prop-types'
 
 export const PostCard = ({ postData, onDelete }) => {
@@ -8,6 +9,10 @@ export const PostCard = ({ postData, onDelete }) => {
 
   const handleEdit = () => {
     history.push(`/posts/edit/${postData.id}`, { postData })
+  }
+
+  const handleDelete = () => {
+    onDelete(postData.id)
   }
 
   return (
@@ -19,21 +24,10 @@ export const PostCard = ({ postData, onDelete }) => {
           </Link>
         </H3>
       </TitleDiv>
-      <ButtonsDiv>
-        <Button
-          type='button'
-          onClick={handleEdit}
-        >
-          Edit
-        </Button>
-        <Button
-          type='button'
-          onClick={() => onDelete(postData.id)}
-          remove
-        >
-          Delete
-        </Button>
-      </ButtonsDiv>
+      <PostButtons
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
     </Card>
   )
 }
